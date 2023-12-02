@@ -5,10 +5,18 @@ from download import get_input
 
 PYTHON_TEMPLATE = (
     """
-import sys
+from pathlib import Path
+
+
+def read_file(filename) -> str:
+    path = Path(__file__).parent.resolve()
+    with open(path / filename, "r") as f:
+        content = f.read()
+        return content
+
 
 def main() -> None:
-    input = sys.stdin.read().strip()
+    content = read_file("example.txt")
 
 if __name__ == "__main__":
     main()
