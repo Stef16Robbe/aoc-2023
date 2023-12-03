@@ -16,7 +16,8 @@ def read_file(filename) -> str:
 
 
 def main() -> None:
-    content = read_file("example.txt")
+    input = read_file("example.txt")
+
 
 if __name__ == "__main__":
     main()
